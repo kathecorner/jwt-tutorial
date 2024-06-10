@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 var jwt = require('jsonwebtoken');
 const config = require("./config");
+const auth = require("./auth");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +29,14 @@ app.post('/register',  (req, res) => {
 
 
   res.status(200).json(body);
+})
+
+app.get("/login", (req, res) => {
+  res.status(200).json({
+    msg: "Login Successful",
+  });
+
+
 })
 
 
